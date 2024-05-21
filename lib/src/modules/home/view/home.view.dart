@@ -10,13 +10,16 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async => await fadePush(context, const SettingView()),
-          child: Text(t!.setting),
-        ),
+      appBar: AppBar(
+        title: const Text('Home'),
+        actions: [
+          IconButton(
+            onPressed: () async => await fadePush(context, const SettingView()),
+            icon: const Icon(Icons.settings),
+          ),
+        ],
       ),
+      body: Center(),
     );
   }
 }
